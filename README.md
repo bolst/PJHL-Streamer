@@ -6,7 +6,7 @@ For example, [https://pjhltv.ca/watch/13725](https://pjhltv.ca/watch/13725) has 
 
 ### Usage
 1. Clone this repo `git clone https://github.com/bolst/PJHL-Streamer.git`
-1. `cd` into `PJHL-Streamer`
+1. Move into the repo `cd PJHL-Streamer`
 1. Install dependencies `pip install -r requirements.txt`
 1. Enter your PJHL TV account credentials in `UserCredentials.json`
 1. Find your desired game ID and enter it in `GetStream.py`
