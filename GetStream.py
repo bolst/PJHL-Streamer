@@ -6,10 +6,10 @@ from selenium.webdriver.common.by import By
 import time
 
 # Enter game ID
-GameID = 18701
+GameID = 18897
 
-X0 = 22780000
-X1 = 23000000
+X0 = 21000000
+X1 = 24000000
 Dx = 500
 
 # cache to remember endpoints already tried
@@ -18,6 +18,10 @@ request_cache = {}
 request_headers = {}
 
 def fetch_auth_headers(GameID):
+    
+    username_input = input('PJHL TV Email: ')
+    password_input = input('PJHL TV Password: ')
+    
     options = webdriver.ChromeOptions()
     options.add_argument('--log-level=3') # to make selenium shut up
     # Create a new instance of the Chrome driver
@@ -28,16 +32,16 @@ def fetch_auth_headers(GameID):
     username = driver.find_element(By.ID, "email")
     password = driver.find_element(By.ID, "password")
 
-    with open('UserCredentials.json', 'r') as f:
-        d = json.load(f)
-        username.send_keys(d['username'])
-        password.send_keys(d['password'])
+    username.send_keys(username_input)
+    password.send_keys(password_input)
 
     driver.find_element(By.CLASS_NAME, "common-button-pjhl").click()
 
     time.sleep(5)
 
     driver.get(f'https://pjhltv.ca/watch/{GameID}')
+    
+    time.sleep(5)
 
     headers = {}
 
