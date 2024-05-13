@@ -2,3 +2,4 @@
 *.m3u8
 __pycache__
 .DS_STORE
+venv

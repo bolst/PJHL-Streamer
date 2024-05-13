@@ -201,7 +201,7 @@ def download_ts(l,r):
     
 
 def run():
-    print(f'Downloading game #{GameID} ({outfile.replace('.ts','').replace('-', ' ')})')
+    print(f"Downloading game #{GameID} ({outfile.replace('.ts','').replace('-', ' ')})")
     
     # find one endpoint that works
     print('\nfinding working endpoint...')
